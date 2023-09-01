@@ -18,6 +18,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const taskRoutes = require('./routes/tasks');
+app.use('/api', taskRoutes);
+
+
 app.get('/', (req, res) => {
   res.send('Task Manager API');
 });
